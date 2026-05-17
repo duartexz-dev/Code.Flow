@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeFlow — Dashboard</title>
+    <meta name="description" content="Dashboard do CodeFlow. Acesse trilhas de cursos, pratique e evolua.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+    <canvas id="space-canvas" aria-hidden="true"></canvas>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Code<span style="color:var(--accent)">.</span>Flow</a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#cursos" class="active">Trilhas</a></li>
+                    <li><a href="exercicios.html">Exercícios</a></li>
+                    <li><a href="minigames.html">Minigames</a></li>
+                    <li><a href="educativo.html">Recursos</a></li>
+                    <li><a href="profile.html"><i class="far fa-user-circle"></i> Perfil</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <!-- Hero -->
+        <header class="hero section-reveal" id="inicio">
+            <div class="hero-content">
+                <span class="badge">Plataforma de Estudos</span>
+                <h1>Domine a arte de <span class="gradient-text">programar.</span></h1>
+                <p class="subtitle">Trilhas completas, desafios interativos e minigames para fixar o conhecimento de verdade.</p>
+                <div class="hero-actions">
+                    <a href="#cursos" class="btn btn-primary">Ver Trilhas <i class="fas fa-arrow-right"></i></a>
+                    <a href="#pratica" class="btn btn-secondary">Área de Prática</a>
+                </div>
+                <div class="suggestions">
+                    <span>Linguagens Disponíveis</span>
+                    <div class="tags">
+                        <a href="CursoJs.html" class="tag"><i class="fab fa-js"></i> JavaScript</a>
+                        <a href="CursoCs.html" class="tag"><i class="fab fa-microsoft"></i> C#</a>
+                        <a href="CursoPython.html" class="tag"><i class="fab fa-python"></i> Python</a>
+                        <a href="CursoReact.html" class="tag"><i class="fab fa-react"></i> React</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-graphic" aria-hidden="true">
+                <div class="code-snippet-card">
+                    <div class="window-controls"><span></span><span></span><span></span></div>
+                    <pre><code><span class="keyword">function</span> <span class="method">aprender</span>() {
+  <span class="keyword">const</span> <span class="variable">plataforma</span> = <span class="string">'CodeFlow'</span>;
+  <span class="keyword">let</span> <span class="variable">skills</span> = [];
+
+  <span class="keyword">while</span> (<span class="variable">motivado</span>) {
+    <span class="variable">skills</span>.<span class="method">push</span>(<span class="method">estudar</span>());
+  }
+
+  <span class="keyword">return</span> <span class="string">'Dev Sênior'</span>;
+}</code></pre>
+                </div>
+            </div>
+        </header>
+
+        <!-- Courses Section -->
+        <section id="cursos" class="section-reveal">
+            <header class="section-header">
+                <h2>Trilhas de Conhecimento</h2>
+                <p>Escolha sua stack e evolua no seu ritmo com videoaulas organizadas por módulos.</p>
+            </header>
+            <div class="courses-grid">
+                <article class="course-card glass-card">
+                    <div class="card-icon"><i class="fab fa-html5"></i></div>
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Construa interfaces responsivas e acessíveis do zero.</p>
+                    <a href="CursoCssHtml.html" class="btn-text">Acessar Trilha</a>
+                </article>
+                <article class="course-card glass-card">
+                    <div class="card-icon"><i class="fab fa-js"></i></div>
+                    <h3>JavaScript ES6+</h3>
+                    <p>Domine a linguagem mais popular do desenvolvimento web.</p>
+                    <a href="CursoJs.html" class="btn-text">Acessar Trilha</a>
+                </article>
+                <article class="course-card glass-card">
+                    <div class="card-icon"><i class="fab fa-python"></i></div>
+                    <h3>Python</h3>
+                    <p>Automação, dados e back-end com a linguagem mais versátil.</p>
+                    <a href="CursoPython.html" class="btn-text">Acessar Trilha</a>
+                </article>
+                <article class="course-card glass-card">
+                    <div class="card-icon"><i class="fab fa-microsoft"></i></div>
+                    <h3>C# (.NET)</h3>
+                    <p>Sistemas robustos, APIs e jogos com a stack Microsoft.</p>
+                    <a href="CursoCs.html" class="btn-text">Acessar Trilha</a>
+                </article>
+                <article class="course-card glass-card">
+                    <div class="card-icon"><i class="fab fa-java"></i></div>
+                    <h3>Java</h3>
+                    <p>A linguagem mais usada em grandes corporações e back-end.</p>
+                    <a href="CursoJava.html" class="btn-text">Acessar Trilha</a>
+                </article>
+                <article class="course-card glass-card">
+                    <div class="card-icon"><i class="fab fa-react"></i></div>
+                    <h3>React</h3>
+                    <p>Construa interfaces modernas com a biblioteca do Facebook.</p>
+                    <a href="CursoReact.html" class="btn-text">Acessar Trilha</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section id="pratica" class="section-reveal">
+            <header class="section-header">
+                <h2>Prática & Minigames</h2>
+                <p>O conhecimento se consolida quando é colocado à prova.</p>
+            </header>
+            <div class="practice-content">
+                <aside class="challenges-area glass-card">
+                    <header class="area-header">
+                        <i class="fas fa-terminal" style="color: var(--accent);"></i>
+                        <h3>Desafios Rápidos</h3>
+                    </header>
+                    <p>Exercícios de lógica e código para fixar conceitos.</p>
+                    <ul class="challenge-list">
+                        <li><span>Lvl 1</span> Função de Soma <button class="btn-small">Jogar</button></li>
+                        <li><span>Lvl 2</span> Inversão de String <button class="btn-small">Jogar</button></li>
+                        <li><span>Lvl 3</span> Requisições API <button class="btn-small">Jogar</button></li>
+                    </ul>
+                </aside>
+                <div id="minigames" class="minigames-area glass-card">
+                    <header class="area-header">
+                        <i class="fas fa-gamepad" style="color: var(--accent-pink);"></i>
+                        <h3>Arcade CodeFlow</h3>
+                    </header>
+                    <div class="games-grid">
+                        <article class="game-card">
+                            <div class="game-icon">🧠</div>
+                            <h4>Quiz de Lógica</h4>
+                            <p>Perguntas de sintaxe e tipos de dados.</p>
+                            <button class="btn-text">Iniciar</button>
+                        </article>
+                        <article class="game-card">
+                            <div class="game-icon">🧩</div>
+                            <h4>Complete o Código</h4>
+                            <p>Preencha a lógica que falta no trecho.</p>
+                            <button class="btn-text">Iniciar</button>
+                        </article>
+                        <article class="game-card">
+                            <div class="game-icon">🐛</div>
+                            <h4>Bug Hunter</h4>
+                            <p>Encontre o erro antes do tempo esgotar.</p>
+                            <button class="btn-text">Iniciar</button>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="section-reveal">
+            <header class="section-header">
+                <h2>Network & Comunidade</h2>
+                <p>Evolua junto com milhares de outros desenvolvedores.</p>
+            </header>
+            <div class="community-grid">
+                <div class="community-card glass-card discord-card" style="text-align: center; padding: 2rem;">
+                    <i class="fab fa-discord" style="font-size: 3rem; color: #5865F2; margin-bottom: 1rem;"></i>
+                    <h3>Comunidade Independente</h3>
+                    <p>Junte-se a milhares de programadores do Brasil e Portugal. Tire dúvidas, colabore em projetos e faça networking real.</p>
+                    <a href="https://discord.com" target="_blank" class="btn-primary" style="background: #5865F2; border: none; margin-top: 1rem; padding: 0.8rem 1.5rem; text-decoration: none; display: inline-block;">Entrar na Comunidade</a>
+                </div>
+                <div class="community-card glass-card" style="text-align: center; padding: 2rem;">
+                    <i class="fas fa-graduation-cap" style="font-size: 3rem; color: var(--accent); margin-bottom: 1rem;"></i>
+                    <h3>Área Educativa</h3>
+                    <p>Roadmaps visuais, dicas de como estudar programação e mentorias passivas com foco no mercado.</p>
+                    <a href="educativo.html" class="btn-text" style="margin-top: 1rem;">Explorar Recursos</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section id="recomendacoes" class="section-reveal" style="margin-top: 3rem;">
+            <header class="section-header">
+                <h2>Cursos Recomendados</h2>
+                <p>Expanda seus horizontes com os melhores conteúdos globais.</p>
+            </header>
+            <div class="course-grid">
+                <article class="course-card glass-card">
+                    <div class="card-icon" style="color: #a00;"><i class="fas fa-university"></i></div>
+                    <h3>CS50 (Harvard)</h3>
+                    <p>A mais lendária introdução à Ciência da Computação.</p>
+                    <a href="https://cs50.harvard.edu/" target="_blank" class="btn-text">Acessar Curso</a>
+                </article>
+                <article class="course-card glass-card">
+                    <div class="card-icon" style="color: #006400;"><i class="fab fa-free-code-camp"></i></div>
+                    <h3>FreeCodeCamp</h3>
+                    <p>Milhares de horas de projetos e certificações práticas.</p>
+                    <a href="https://www.freecodecamp.org/" target="_blank" class="btn-text">Acessar Curso</a>
+                </article>
+                <article class="course-card glass-card">
+                    <div class="card-icon" style="color: #e4aa6c;"><i class="fas fa-code-branch"></i></div>
+                    <h3>The Odin Project</h3>
+                    <p>O currículo Full Stack open source mais denso do mercado.</p>
+                    <a href="https://www.theodinproject.com/" target="_blank" class="btn-text">Acessar Curso</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="game-modal" class="modal-overlay" role="dialog" aria-hidden="true">
+            <div class="modal-container">
+                <header class="modal-header">
+                    <h3 id="modal-title">Desafio</h3>
+                    <button class="btn-close-modal" id="btn-close-modal"><i class="fas fa-times"></i></button>
+                </header>
+                <div class="modal-body">
+                    <p id="modal-description"></p>
+                    <textarea id="modal-input" class="modal-code-input" spellcheck="false"></textarea>
+                </div>
+                <footer class="modal-footer">
+                    <span id="modal-feedback" class="modal-feedback" aria-live="polite"></span>
+                    <button id="btn-submit-modal" class="btn-submit-modal">Verificar</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="sobre">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>CodeFlow</h3>
+                <p>Educação tecnológica de alto nível, acessível a todos.</p>
+            </div>
+            <div class="footer-links">
+                <a href="profile.html">Meu Perfil</a>
+                <a href="#">Termos</a>
+                <a href="#">Privacidade</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CodeFlow</p>
+            <p>Criado por <span style="color: var(--accent); font-weight: 600;">Arthur Duarte</span></p>
+        </div>
+    </footer>
+
+    <script src="../js/effects.js" defer></script>
+    <script src="../js/home.js" defer></script>
+    <script src="../js/minigames.js" defer></script>
+</body>
+</html>

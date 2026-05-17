@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeFlow | Plataforma de Ensino de Programação</title>
+    <meta name="description" content="Aprenda programação de forma moderna, interativa e gratuita.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <canvas id="space-canvas" aria-hidden="true"></canvas>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand"><span class="logo">Code<span class="logo-dot">.</span>Flow</span></a>
+            <nav><ul class="nav-links">
+                <li><a href="#comecar">Começar</a></li>
+            </ul></nav>
+        </div>
+    </header>
+
+    <!-- Login -->
+    <main class="login-wrapper" id="comecar">
+        <section class="login-card">
+            <header class="login-header">
+                <h2>Bem-vindo de volta 👋</h2>
+                <p>Acesse sua conta para continuar aprendendo.</p>
+            </header>
+            <form id="login-form" class="login-form">
+                <div class="input-group">
+                    <label for="nome">Seu Nome</label>
+                    <input type="text" id="nome" placeholder="Como devemos te chamar?" required autocomplete="name">
+                </div>
+                <div class="input-group">
+                    <label for="idade">Idade</label>
+                    <input type="number" id="idade" placeholder="Sua idade" required min="10" max="100">
+                </div>
+                <button id="btn-login" type="submit" class="btn-login">
+                    Entrar na plataforma <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+            <footer class="login-footer">
+                <p>Primeira vez? Basta preencher acima para criar sua conta.</p>
+            </footer>
+        </section>
+    </main>
+
+    <script src="js/effects.js" defer></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

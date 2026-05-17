@@ -1,0 +1,191 @@
+/* ==========================================================================
+   CodeFlow — Design System & Login Page
+   Theme: Deep Navy / Petrol Blue (Premium EduTech)
+   ========================================================================== */
+
+/* === Design Tokens === */
+:root {
+    /* Base Colors — Deep Navy Palette */
+    --bg-base:       #0b1120;
+    --bg-surface:    #111a2e;
+    --bg-elevated:   #162038;
+    --bg-card:       rgba(22, 32, 56, 0.7);
+
+    /* Text */
+    --text-primary:   #e8ecf4;
+    --text-secondary: #8899b4;
+    --text-muted:     #5a6f8f;
+    --text-heading:   #f0f4fa;
+
+    /* Accent — Soft Neon Blue */
+    --accent:        #4da6ff;
+    --accent-hover:  #3d94ef;
+    --accent-muted:  rgba(77, 166, 255, 0.12);
+    --accent-glow:   rgba(77, 166, 255, 0.25);
+
+    /* Success / Error */
+    --success:       #34d399;
+    --success-glow:  rgba(52, 211, 153, 0.25);
+    --error:         #f87171;
+
+    /* Borders & Shadows */
+    --border:        rgba(255, 255, 255, 0.06);
+    --border-hover:  rgba(255, 255, 255, 0.12);
+    --shadow-sm:     0 2px 8px rgba(0,0,0,0.2);
+    --shadow-md:     0 8px 24px rgba(0,0,0,0.25);
+    --shadow-lg:     0 16px 48px rgba(0,0,0,0.35);
+
+    /* Layout */
+    --radius-sm:  8px;
+    --radius-md:  12px;
+    --radius-lg:  20px;
+    --radius-xl:  28px;
+    --font:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* === Reset === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+::selection { background: var(--accent); color: var(--bg-base); }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font);
+    background: var(--bg-base);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font-family: inherit; }
+img { max-width: 100%; display: block; }
+
+/* === Ambient Background === */
+#space-canvas {
+    position: fixed; inset: 0;
+    width: 100%; height: 100%;
+    z-index: 0; pointer-events: none;
+}
+
+/* === Navbar === */
+.navbar {
+    position: fixed; top: 0; left: 0; right: 0;
+    padding: 1rem 0;
+    z-index: 100;
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: padding 0.3s var(--ease);
+}
+
+.nav-container {
+    max-width: 1120px; margin: 0 auto; padding: 0 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.brand { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+.brand .logo {
+    font-size: 1.3rem; font-weight: 700; letter-spacing: -0.03em;
+    color: var(--text-heading);
+}
+.brand .logo-dot { color: var(--accent); }
+.brand .tagline { display: none; }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+    color: var(--text-secondary); font-size: 0.875rem; font-weight: 500;
+    transition: color 0.2s var(--ease);
+}
+.nav-links a:hover { color: var(--text-primary); }
+
+.mobile-menu-btn { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.25rem; cursor: pointer; }
+
+/* === Login Page Layout === */
+.login-wrapper {
+    position: relative; z-index: 1;
+    min-height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    padding: 2rem 1.5rem;
+}
+
+.login-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2.5rem;
+    width: 100%; max-width: 420px;
+    box-shadow: var(--shadow-lg);
+    animation: cardEnter 0.7s var(--ease-out) forwards;
+    opacity: 0; transform: translateY(16px);
+}
+
+@keyframes cardEnter {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-header { text-align: center; margin-bottom: 2.5rem; }
+.login-header h2 {
+    font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em;
+    color: var(--text-heading); margin-bottom: 0.4rem;
+}
+.login-header p { color: var(--text-secondary); font-size: 0.95rem; }
+
+/* Form */
+.input-group { margin-bottom: 1.25rem; }
+.input-group label {
+    display: block; font-size: 0.8rem; font-weight: 600;
+    color: var(--text-secondary); margin-bottom: 0.4rem;
+    text-transform: uppercase; letter-spacing: 0.04em;
+}
+.input-group input {
+    width: 100%; padding: 0.85rem 1rem;
+    background: var(--bg-base);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary); font-size: 0.95rem;
+    outline: none; transition: all 0.25s var(--ease);
+}
+.input-group input::placeholder { color: var(--text-muted); }
+.input-group input:hover { border-color: var(--border-hover); }
+.input-group input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-muted);
+    background: var(--bg-surface);
+}
+
+.btn-login {
+    width: 100%; padding: 0.9rem; margin-top: 0.75rem;
+    background: var(--accent); color: #fff;
+    border: none; border-radius: var(--radius-md);
+    font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    transition: all 0.25s var(--ease);
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+}
+.btn-login:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 4px 20px var(--accent-glow);
+    transform: translateY(-1px);
+}
+.btn-login:active { transform: translateY(0); }
+.btn-login:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+
+.login-footer {
+    text-align: center; margin-top: 1.75rem;
+    font-size: 0.85rem; color: var(--text-muted);
+}
+.login-footer a { color: var(--accent); font-weight: 600; }
+.login-footer a:hover { text-decoration: underline; }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: block; }
+    .login-card { padding: 2.5rem 1.5rem; border-radius: var(--radius-lg); }
+}

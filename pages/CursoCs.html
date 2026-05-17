@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeFlow — Trilha C# (.NET)</title>
+    <meta name="description" content="Aprenda C# do básico ao avançado com o CFBCursos na CodeFlow.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/cursojs.css">
+</head>
+<body data-course="cs">
+
+    <!-- Navbar -->
+    <header class="glass-nav">
+        <div class="nav-left">
+            <a href="home.html" class="logo"><i class="fas fa-arrow-left"></i> CodeFlow</a>
+            <span class="course-title">Trilha C# (.NET)</span>
+        </div>
+        <div class="nav-center">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" role="progressbar"></div>
+            </div>
+            <span class="progress-text" id="progress-text">0 de 15 concluídas</span>
+        </div>
+        <nav class="nav-right">
+            <button class="btn-nav" id="btn-prev" disabled><i class="fas fa-chevron-left"></i> Anterior</button>
+            <button class="btn-nav btn-primary" id="btn-next">Próxima <i class="fas fa-chevron-right"></i></button>
+        </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="course-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <header class="sidebar-header"><h3>Módulos do Curso</h3></header>
+            <nav class="lesson-list" id="lesson-list">
+                <a href="https://www.youtube.com/embed/dVzJ3bx68FA" class="lesson-item active" data-id="1">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">1. Introdução e configuração</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/2cGjyyw5ifQ" class="lesson-item" data-id="2">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">2. Primeiro programa .NET</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/oC6v7s0cRB4" class="lesson-item" data-id="3">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">3. Variáveis e tipos de dados</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/VGMkXOmLXGE" class="lesson-item" data-id="4">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">4. Constantes e conversão</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/M0NwRSQwdmw" class="lesson-item" data-id="5">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">5. Operadores aritméticos</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/9dLf0x6JPRM" class="lesson-item" data-id="6">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">6. Operadores relacionais</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/PfKBx6mEYCA" class="lesson-item" data-id="7">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">7. Operadores lógicos</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/tFpg3KY5CSQ" class="lesson-item" data-id="8">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">8. Condição if / else</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/4PzA9uFYUGk" class="lesson-item" data-id="9">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">9. Switch / case</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/jj9ZnFsGKl0" class="lesson-item" data-id="10">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">10. Laço while</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/EZGPPhZe0rU" class="lesson-item" data-id="11">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">11. Laço for</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/NiSbCw0xKq8" class="lesson-item" data-id="12">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">12. Vetores e arrays</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/3XlRBpSCYb0" class="lesson-item" data-id="13">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">13. Funções e métodos</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/ZMxb7oqVjJM" class="lesson-item" data-id="14">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">14. Classes e objetos</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+                <a href="https://www.youtube.com/embed/RlGVp7Go4dQ" class="lesson-item" data-id="15">
+                    <div class="lesson-status"><i class="fas fa-check"></i></div>
+                    <div class="lesson-info">
+                        <span class="lesson-title">15. Encapsulamento</span>
+                        <span class="lesson-duration"><i class="far fa-play-circle"></i> Vídeo</span>
+                    </div>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Content -->
+        <section class="content-area">
+            <article class="player-container">
+                <div class="video-wrapper">
+                    <iframe id="video-frame" title="Player de Vídeo" src="https://www.youtube.com/embed/dVzJ3bx68FA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <header class="player-controls">
+                    <h2 id="current-lesson-title">1. Introdução e configuração</h2>
+                    <div class="actions">
+                        <button class="btn-action" id="btn-complete"><i class="far fa-check-circle"></i> Concluir</button>
+                    </div>
+                </header>
+            </article>
+
+            <article class="presentation-container">
+                <div class="instructor-info">
+                    <img src="https://yt3.googleusercontent.com/ytc/AIdro_kBMNBXn4A7R3F5kR2r_eWyXMbNJIwyrpjDSLFkWHCE2g=s176-c-k-c0x00ffffff-no-rj" alt="CFBCursos" class="instructor-img" style="background:#fff; padding:4px;">
+                    <div class="instructor-details">
+                        <h3>Prof. Bruno (CFBCursos)</h3>
+                        <p>Um dos maiores canais de programação do Brasil. O curso de C# do CFBCursos é referência pela didática detalhada, cobrindo desde lógica básica até aplicações completas com .NET.</p>
+                    </div>
+                </div>
+                <aside class="study-guide">
+                    <div class="guide-card">
+                        <h4><i class="fas fa-lightbulb"></i> Dicas de Estudo</h4>
+                        <ul>
+                            <li>Instale o Visual Studio Community ou VS Code + C# Dev Kit</li>
+                            <li>Compile todo código junto com o instrutor</li>
+                            <li>Foque nos conceitos de Classes e Objetos — base do C#</li>
+                            <li>Use o bloco de notas para salvar snippets úteis</li>
+                        </ul>
+                    </div>
+                </aside>
+            </article>
+        </section>
+    </main>
+
+    <!-- Notes -->
+    <button id="btn-notes-toggle" class="floating-btn" title="Anotações"><i class="fas fa-edit"></i></button>
+    <aside id="notes-panel" class="notes-overlay hidden">
+        <header class="notes-header">
+            <h3><i class="fas fa-code"></i> Bloco de Notas</h3>
+            <button id="btn-close-notes" class="btn-icon"><i class="fas fa-times"></i></button>
+        </header>
+        <div class="notes-toolbar">
+            <button id="btn-copy-notes" class="btn-icon" title="Copiar"><i class="far fa-copy"></i></button>
+            <span id="save-status" class="save-status">Salvo!</span>
+        </div>
+        <textarea id="notes-area" spellcheck="false" placeholder="// Anote trechos de código C# aqui. Salva automaticamente."></textarea>
+    </aside>
+
+    <script src="../js/effects.js" defer></script>
+    <script src="../js/cursos.js" defer></script>
+</body>
+</html>

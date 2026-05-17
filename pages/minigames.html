@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeFlow | Arcade Minigames</title>
+    <meta name="description" content="Divirta-se e ganhe XP com +10 minigames de programação.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <style>
+        .arcade-header { text-align: center; margin-bottom: 3rem; }
+        .arcade-header h1 { font-size: 3rem; color: transparent; background-clip: text; -webkit-background-clip: text; background-image: linear-gradient(to right, #ff4d4d, #f9cb28); letter-spacing: -1px; }
+        .arcade-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        
+        .game-card { 
+            background: rgba(16, 27, 48, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); 
+            border-radius: 20px; padding: 2rem 1.5rem; text-align: center; 
+            transition: all 0.3s; position: relative; overflow: hidden; backdrop-filter: blur(10px);
+        }
+        .game-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(255, 77, 77, 0.15); border-color: rgba(255, 77, 77, 0.3); }
+        .game-card::before { content:''; position: absolute; top:0; left:0; width:100%; height:4px; background: linear-gradient(90deg, #ff4d4d, #f9cb28); opacity: 0; transition: opacity 0.3s; }
+        .game-card:hover::before { opacity: 1; }
+        
+        .game-icon-lg { font-size: 3.5rem; margin-bottom: 1rem; filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); }
+        .game-title { font-size: 1.25rem; font-weight: 700; color: var(--text-heading); margin-bottom: 0.5rem; }
+        .game-desc { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem; }
+        
+        .diff-selector { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .diff-dot { width: 12px; height: 12px; border-radius: 50%; background: #334155; cursor: pointer; transition: 0.2s; }
+        .diff-dot:hover { transform: scale(1.2); }
+        .diff-dot.active-1 { background: #34d399; box-shadow: 0 0 10px #34d399; }
+        .diff-dot.active-2 { background: #fbbf24; box-shadow: 0 0 10px #fbbf24; }
+        .diff-dot.active-3 { background: #ef4444; box-shadow: 0 0 10px #ef4444; }
+
+        .btn-play-game { 
+            width: 100%; padding: 0.75rem; border-radius: 12px; border: none; 
+            background: linear-gradient(135deg, #ff4d4d, #f9cb28); color: #fff; 
+            font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-play-game:hover { transform: scale(1.05); box-shadow: 0 5px 20px rgba(249, 203, 40, 0.4); }
+    </style>
+</head>
+<body>
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="brand"><span class="logo">Code<span class="logo-dot">.</span>Flow</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="home.html">Início</a></li>
+                    <li><a href="exercicios.html">Exercícios</a></li>
+                    <li><a href="minigames.html" class="active">Minigames</a></li>
+                    <li><a href="profile.html">Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="home-wrapper" style="padding-top: 8rem; min-height: 100vh;">
+        <section class="section-reveal">
+            <header class="arcade-header">
+                <h1>CodeFlow Arcade</h1>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--text-secondary);">Divirta-se programando. Jogue, evolua seu raciocínio lógico sob pressão e colecione XP e Conquistas Especiais.</p>
+            </header>
+
+            <div class="arcade-grid" id="games-container">
+                <!-- Injetado dinamicamente via JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        const games = [
+            { id: 1, title: 'Bug Hunter', icon: '🐛', desc: 'Encontre o erro de sintaxe no bloco de código antes que o tempo esgote. Foco total nos detalhes.' },
+            { id: 2, title: 'Quiz de Lógica', icon: '🧠', desc: 'Responda rápido! Testes teóricos de lógica de programação com tempo cronometrado.' },
+            { id: 3, title: 'Complete o Código', icon: '🧩', desc: 'Arraste os blocos ou digite o comando correto para fechar a função. Teste seu domínio léxico.' },
+            { id: 4, title: 'Speed Coding', icon: '⚡', desc: 'Digite o trecho de código exatamente como aparece na tela na maior velocidade possível.' },
+            { id: 5, title: 'Terminal Hack', icon: '💻', desc: 'Simulador de console UNIX. Resolva quebra-cabeças de permissões, grep e navegação.' },
+            { id: 6, title: 'Prever Output', icon: '🔮', desc: 'Dado um algoritmo complexo (e às vezes pegadinho), descubra qual será o valor printado na tela.' },
+            { id: 7, title: 'Ordenar Código', icon: '↕️', desc: 'As linhas de um algoritmo estão embaralhadas. Ordene-as logicamente para fazer a função compilar.' },
+            { id: 8, title: 'Batalha de Sintaxe', icon: '⚔️', desc: 'Modo sobrevivência: Escreva comandos aleatórios de diversas linguagens sem errar para acumular pontos.' },
+            { id: 9, title: 'CSS Sniper', icon: '🎨', desc: 'Use seletores CSS exatos para atirar (selecionar) as tags corretas na tela.' },
+            { id: 10, title: 'Memory Code', icon: '🃏', desc: 'Jogo da memória clássico, mas combinando conceitos: (ex: "Array.map" forma par com "Transformação").' }
+        ];
+
+        const container = document.getElementById('games-container');
+
+        games.forEach((g, idx) => {
+            const delay = idx * 0.1;
+            const card = document.createElement('article');
+            card.className = 'game-card';
+            card.style.animation = `fadeInUp 0.5s ease forwards ${delay}s`;
+            card.style.opacity = '0';
+            
+            card.innerHTML = `
+                <div class="game-icon-lg">${g.icon}</div>
+                <h3 class="game-title">${g.title}</h3>
+                <p class="game-desc">${g.desc}</p>
+                <div class="diff-selector" id="diff-${g.id}">
+                    <div class="diff-dot active-1" title="Fácil"></div>
+                    <div class="diff-dot" title="Médio"></div>
+                    <div class="diff-dot" title="Difícil"></div>
+                </div>
+                <button class="btn-play-game" onclick="startGame('${g.title}')"><i class="fas fa-play"></i> INICIAR JOGO</button>
+            `;
+            container.appendChild(card);
+
+            // Adicionar interatividade de dificuldade
+            const dots = card.querySelectorAll('.diff-dot');
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    dots.forEach(d => { d.classList.remove('active-1', 'active-2', 'active-3'); });
+                    for(let j=0; j<=i; j++) {
+                        dots[j].classList.add(`active-${i+1}`);
+                    }
+                });
+            });
+        });
+
+        const startGame = (gameName) => {
+            let timerInterval;
+            Swal.fire({
+                title: `Carregando ${gameName}...`,
+                html: 'Inicializando motor gráfico e instanciando desafios em <b></b> milisegundos.',
+                timer: 2000,
+                timerProgressBar: true,
+                background: '#101b30', color: '#f0f4fa',
+                didOpen: () => {
+                    Swal.showLoading();
+                    const b = Swal.getHtmlContainer().querySelector('b');
+                    timerInterval = setInterval(() => { b.textContent = Swal.getTimerLeft(); }, 100);
+                },
+                willClose: () => { clearInterval(timerInterval); }
+            }).then(() => {
+                // Simulação de término e recompensa XP
+                Swal.fire({
+                    title: 'Vitória Épica! 🏆',
+                    text: `Você completou o minigame ${gameName}!`,
+                    icon: 'success',
+                    background: '#101b30', color: '#f0f4fa',
+                    confirmButtonColor: '#4da6ff',
+                    confirmButtonText: 'Coletar +150 XP'
+                }).then((res) => {
+                    if(res.isConfirmed) {
+                        confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 } });
+                        let currentXp = parseInt(localStorage.getItem('codeflow_global_xp')) || 0;
+                        localStorage.setItem('codeflow_global_xp', currentXp + 150);
+                    }
+                });
+            });
+        };
+
+        const style = document.createElement('style');
+        style.innerHTML = `@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }`;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

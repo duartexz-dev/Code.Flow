@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil — CodeFlow</title>
+    <meta name="description" content="Veja seu progresso, conquistas e estatísticas na CodeFlow.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="logo">Code<span style="color:var(--accent)">.</span>Flow</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="home.html">Dashboard</a></li>
+                    <li><a href="#" class="active">Perfil</a></li>
+                </ul>
+            </nav>
+            <button id="mobile-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main class="profile-page">
+        <!-- Profile Header -->
+        <section class="profile-header">
+            <div class="profile-avatar" id="avatar-icon"><i class="fas fa-user"></i></div>
+            <div class="profile-info">
+                <h1 id="profile-name">Estudante</h1>
+                <span class="user-level"><i class="fas fa-bolt"></i> <span id="user-level-text">Nível 1 — Iniciante</span></span>
+                <p id="profile-subtitle">Membro desde hoje. Continue estudando para subir de nível!</p>
+            </div>
+        </section>
+
+        <!-- XP Bar -->
+        <section class="xp-section">
+            <div class="xp-header">
+                <h3>Experiência (XP)</h3>
+                <span id="xp-text">0 / 500 XP</span>
+            </div>
+            <div class="xp-bar">
+                <div class="xp-bar-fill" id="xp-bar-fill" style="width: 0%;"></div>
+            </div>
+        </section>
+
+        <!-- Stats Grid -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Estatísticas</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-value" id="stat-courses">0</div>
+                    <div class="stat-label">Cursos Iniciados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-value" id="stat-completed">0</div>
+                    <div class="stat-label">Aulas Concluídas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-value" id="stat-challenges">0</div>
+                    <div class="stat-label">Desafios Feitos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔥</div>
+                    <div class="stat-value" id="stat-streak">0</div>
+                    <div class="stat-label">Dias Seguidos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-value" id="stat-time">0h</div>
+                    <div class="stat-label">Tempo Estudado</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-value" id="stat-xp">0</div>
+                    <div class="stat-label">XP Total</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses In Progress -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-play-circle"></i> Cursos em Andamento</h2>
+            <div class="courses-progress" id="courses-progress">
+                <!-- Populated by JS -->
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Nenhum curso iniciado ainda. <a href="home.html" style="color: var(--accent);">Comece agora →</a></p>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-trophy"></i> Conquistas</h2>
+            <div class="badges-grid">
+                <div class="badge-card" id="badge-first-login">
+                    <div class="badge-icon">🚀</div>
+                    <div class="badge-name">Primeiro Acesso</div>
+                    <div class="badge-desc">Criou sua conta</div>
+                </div>
+                <div class="badge-card locked" id="badge-5-lessons">
+                    <div class="badge-icon">📖</div>
+                    <div class="badge-name">5 Aulas</div>
+                    <div class="badge-desc">Complete 5 aulas</div>
+                </div>
+                <div class="badge-card locked" id="badge-first-challenge">
+                    <div class="badge-icon">⚡</div>
+                    <div class="badge-name">Primeiro Desafio</div>
+                    <div class="badge-desc">Resolva 1 desafio</div>
+                </div>
+                <div class="badge-card locked" id="badge-streak-3">
+                    <div class="badge-icon">🔥</div>
+                    <div class="badge-name">3 Dias</div>
+                    <div class="badge-desc">Sequência de 3 dias</div>
+                </div>
+                <div class="badge-card locked" id="badge-10-lessons">
+                    <div class="badge-icon">🎓</div>
+                    <div class="badge-name">10 Aulas</div>
+                    <div class="badge-desc">Complete 10 aulas</div>
+                </div>
+                <div class="badge-card locked" id="badge-master">
+                    <div class="badge-icon">👑</div>
+                    <div class="badge-name">Mestre</div>
+                    <div class="badge-desc">Termine um curso</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity History -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-history"></i> Atividade Recente</h2>
+            <ul class="activity-list" id="activity-list">
+                <li class="activity-item">
+                    <span class="activity-dot"></span>
+                    <span class="activity-text">Conta criada na <strong>CodeFlow</strong></span>
+                    <span class="activity-time">Agora</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="../js/profile.js" defer></script>
+</body>
+</html>
