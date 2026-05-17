@@ -279,9 +279,9 @@ Sugestões e melhorias são bem-vindas! Se você tem ideias para expandir o proj
 
 ## 📝 Licença
 
-Este projeto é de código aberto e foi criado com fins educacionais.
+Este projeto é de código aberto , foi criado com fins educacionais e com o objetivo de automatizar meus estudos usando inteligência artificial.
 
-## 👨‍💻 Desenvolvedor
+## 👨‍💻 Desenvolvedor da Plataforma : Arthur Duarte / Duartexz.dev
 
 **Desenvolvido 100% com Inteligência Artificial**
 
