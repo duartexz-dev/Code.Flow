@@ -1,43 +1,28 @@
-# Sobre o CodeFlow
+# Sobre o Code.Flow
 
-**CodeFlow** é uma plataforma de ensino de programação desenvolvida **100% com Inteligência Artificial** usando AntiGravity e suas AIs integradas.
+O Code.Flow é um projeto de estudo voltado à organização de conteúdos e experiências de aprendizagem de programação em uma aplicação front-end.
 
-## O Projeto
+O repositório reúne páginas de cursos de JavaScript, Python, C#, Java, React e HTML/CSS, além de áreas para exercícios, minigames, conteúdo educativo e perfil.
 
-O CodeFlow nasceu com dois objetivos principais:
+## Objetivo
 
-1. **Automatizar Estudos**: Estruturar trilhas de aprendizado com conteúdo organizado (JavaScript, Python, C#, React, HTML/CSS), videoaulas do YouTube, exercícios práticos e minigames educacionais.
+O projeto explora a criação de uma experiência educativa usando HTML, CSS e JavaScript. Durante seu desenvolvimento, são praticados:
 
-2. **Aplicar IA na Prática**: Demonstrar conhecimento real de IA implementando automação inteligente, geração dinâmica de conteúdo, integração de APIs e processamento automático de dados educacionais.
+- Estruturação de páginas e navegação.
+- Manipulação do DOM e eventos.
+- Validação de formulários no navegador.
+- Persistência local de dados com `localStorage`.
+- Organização de conteúdo por cursos e áreas de estudo.
+- Scripts auxiliares para geração e atualização de páginas.
 
-## Características Principais
+## Estado atual
 
-- 🎓 **5 Trilhas de Conhecimento**: JavaScript, Python, C#, React, HTML/CSS
-- 📺 **Integração YouTube**: Videoaulas dinâmicas e organizadas
-- 💪 **Exercícios Interativos**: Validação automática com feedback imediato
-- 🎮 **Minigames**: Gamificação para fixação de conceitos
-- 👤 **Perfil Personalizado**: Rastreamento de progresso e estatísticas
-- 🎨 **Design Moderno**: Responsivo, intuitivo e acessível
-- 🤖 **100% com IA**: Código, design e automação gerados por IA
+O Code.Flow é uma aplicação front-end estática. O perfil inicial é guardado no navegador; o repositório não fornece autenticação segura, backend ou banco de dados para sincronização de contas e progresso.
 
-## Tecnologias
+Os materiais que usam serviços externos dependem desses recursos permanecerem disponíveis e de uma conexão com a internet. O conteúdo e as funcionalidades devem ser entendidos de acordo com os arquivos presentes no repositório, não como uma lista de recursos futuros.
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **APIs**: YouTube, Fetch, localStorage
-- **IA**: Claude AI, GPT-4, AntiGravity
-- **Deployment**: GitHub Pages, Git
-
-## Como Começar
-
-1. Abra `index.html` no navegador
-2. Crie sua conta (nome e idade)
-3. Escolha uma trilha de aprendizado
-4. Comece a aprender com videoaulas, exercícios e minigames
-
-## Por que CodeFlow?
-
-CodeFlow demonstra na prática como a Inteligência Artificial pode revolucionar a educação em programação, automatizando processos, gerando conteúdo inteligentemente e criando experiências educacionais envolventes e eficazes.
+Para instruções de execução e estrutura, consulte o [README](./README.md).
 
 ---
 
-**Desenvolvido 100% com IA | CodeFlow © 2026**
+Desenvolvido por Arthur Duarte.
