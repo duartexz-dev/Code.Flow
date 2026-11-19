@@ -1,317 +1,107 @@
-# CodeFlow 🎓
+# Code.Flow
 
-**Uma Plataforma Inteligente de Ensino de Programação Desenvolvida 100% com IA**
+**Code.Flow** é uma plataforma front-end de estudos de programação. O repositório reúne páginas de cursos, exercícios, recursos educativos, minigames e perfil em uma aplicação estática feita com HTML, CSS e JavaScript.
 
-![CodeFlow](https://img.shields.io/badge/Desenvolvido%20com-IA%20100%25-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Ativo-brightgreen?style=for-the-badge)
-![Linguagem](https://img.shields.io/badge/Linguagem-HTML%2FCSS%2FJS-yellow?style=for-the-badge)
+## Visão geral
 
-## 📖 Sobre
+A página inicial apresenta um formulário simples com nome e idade. Após a validação no navegador, os dados básicos do perfil são gravados em `localStorage` e a aplicação direciona para a área principal.
 
-**CodeFlow** é uma plataforma web moderna desenvolvida integralmente com Inteligência Artificial, projetada para automatizar e otimizar o processo de aprendizado de programação. O projeto nasceu como uma demonstração prática de como a IA pode ser aplicada para criar soluções educacionais inovadoras.
+O projeto contém páginas e materiais relacionados a:
 
-### 🎯 Objetivo do Projeto
+- JavaScript
+- Python
+- C#
+- Java
+- React
+- HTML e CSS
 
-1. **Automatizar Estudos**: Estruturar trilhas de aprendizado com conteúdo organizado e exercícios práticos
-2. **Aplicar IA na Prática**: Demonstrar o conhecimento de IA usando AntiGravity e suas AIs integradas
-3. **Criar Experiência Educacional**: Oferecer uma plataforma intuitiva e engajante para aprender programação
+Também existem páginas dedicadas a exercícios, minigames, conteúdo educativo e perfil.
 
-## ✨ Características
+## Funcionalidades presentes no repositório
 
-### 🎓 Trilhas de Aprendizado
+- Formulário inicial com validação básica no navegador.
+- Persistência local do perfil usando `localStorage`.
+- Páginas separadas para cursos e áreas de estudo.
+- Área de exercícios e minigames.
+- Scripts auxiliares para geração e atualização de páginas de cursos.
 
-- **JavaScript ES6+** - JavaScript moderno e avançado
-- **Python** - Linguagem versátil para múltiplos domínios
-- **C#** - Programação orientada a objetos e .NET
-- **React** - Bibliotecas front-end modernas
-- **HTML5 & CSS3** - Fundamentos do desenvolvimento web
+A presença de uma página ou script no repositório não significa, por si só, que exista um serviço de backend, autenticação segura, sincronização de progresso entre dispositivos ou integração operacional com uma API externa.
 
-### 📺 Integração com Videoaulas
+## Tecnologias
 
-- Playlists dinâmicas do YouTube
-- Player embarcado e intuitivo
-- Navegação fluida entre aulas
-- Conteúdo sempre atualizado
+- HTML5
+- CSS3
+- JavaScript puro
+- `localStorage`
+- Recursos externos carregados por CDN e links para conteúdos online
 
-### 🎮 Exercícios e Minigames
+## Executar localmente
 
-- Desafios interativos por linguagem
-- Validação automática de respostas
-- Minigames para fixação de conceitos
-- Gamificação com pontuação
+O projeto não possui um `package.json` na raiz nem uma etapa de build para a interface principal. Inicie um servidor HTTP estático na raiz:
 
-### 👤 Perfil Personalizado
-
-- Sistema de autenticação simples
-- Rastreamento de progresso
-- Dashboard com estatísticas
-- Histórico de aprendizado
-
-### 📚 Recursos Educacionais
-
-- Documentação prática
-- Dicas e boas práticas
-- Links de referência confiáveis
-- Guias passo a passo
-
-## 🚀 Como Começar
-
-### Requisitos
-
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Conexão com internet (para videoaulas do YouTube)
-- JavaScript ativado
-
-### Instalação
-
-1. **Clone ou baixe o projeto**
-
-   ```bash
-   git clone https://github.com/seu-usuario/codeflow.git
-   cd codeflow
-   ```
-
-2. **Abra no navegador**
-   - Abra o arquivo `index.html` em seu navegador web
-   - Ou configure um servidor local (Python, Node.js, etc)
-
-   **Exemplo com Python:**
-
-   ```bash
-   python -m http.server 8000
-   ```
-
-   **Exemplo com Node.js:**
-
-   ```bash
-   npx http-server
-   ```
-
-3. **Crie sua conta**
-   - Preencha seu nome e idade
-   - Clique em "Entrar na plataforma"
-   - Comece a aprender!
-
-## 📁 Estrutura do Projeto
-
+```bash
+git clone https://github.com/duartexz-dev/Code.Flow.git
+cd Code.Flow
+python -m http.server 8000
 ```
-CodeFlow/
-├── index.html                 # Página de login
-├── README.md                  # Este arquivo
-├── DESCRIPTION.md             # Descrição detalhada do projeto
-│
+
+Abra localhost:8000 no navegador. Também é possível usar a extensão Live Server do VS Code.
+
+## Estrutura atual
+
+```text
+Code.Flow/
 ├── css/
-│   ├── style.css             # Estilos globais
-│   ├── home.css              # Estilos do dashboard
-│   ├── profile.css           # Estilos do perfil
-│   └── cursojs.css           # Estilos específicos dos cursos
-│
+│   ├── cursojs.css
+│   ├── home.css
+│   ├── profile.css
+│   └── style.css
+├── data/
+│   └── playlist.txt
 ├── js/
-│   ├── script.js             # Lógica de login
-│   ├── home.js               # Gerenciamento do dashboard
-│   ├── effects.js            # Efeitos visuais (canvas)
-│   ├── profile.js            # Lógica do perfil
-│   ├── minigames.js          # Jogos educacionais
-│   ├── cursos.js             # Gerenciamento de cursos
-│   └── effects.js            # Animações e efeitos
-│
+│   ├── cursos.js
+│   ├── effects.js
+│   ├── home.js
+│   ├── minigames.js
+│   ├── profile.js
+│   └── script.js
 ├── pages/
-│   ├── home.html             # Dashboard principal
-│   ├── exercicios.html       # Centro de exercícios
-│   ├── minigames.html        # Minigames
-│   ├── profile.html          # Perfil do usuário
-│   ├── educativo.html        # Recursos educacionais
-│   ├── CursoJs.html          # Curso de JavaScript
-│   ├── CursoPython.html      # Curso de Python
-│   ├── CursoCs.html          # Curso de C#
-│   ├── CursoReact.html       # Curso de React
-│   └── CursoCssHtml.html     # Curso de HTML5 & CSS3
-│
+│   ├── CursoCs.html
+│   ├── CursoCssHtml.html
+│   ├── CursoJava.html
+│   ├── CursoJs.html
+│   ├── CursoPython.html
+│   ├── CursoReact.html
+│   ├── educativo.html
+│   ├── exercicios.html
+│   ├── home.html
+│   ├── minigames.html
+│   └── profile.html
 ├── tools/
-│   ├── generate_courses.js   # Gerador de páginas de cursos
-│   ├── fetch_playlist.js     # Buscador de playlists YouTube
-│   └── update_html.js        # Atualizador automático de conteúdo
-│
-└── data/
-    └── playlist.txt          # IDs das playlists do YouTube
+│   ├── fetch_playlist.js
+│   ├── generate_courses.js
+│   └── update_html.js
+├── ABOUT.md
+├── index.html
+└── README.md
 ```
 
-## 💻 Fluxo de Uso
+Os scripts PowerShell `fix_others.ps1` e `fix_react.ps1` também estão na raiz e fazem parte dos arquivos auxiliares do repositório.
 
-```
-Login → Dashboard → Escolher Trilha → Assistir Videoaulas
-                ↓
-            Exercícios → Minigames → Completar Módulo
-                ↓
-            Perfil → Ver Progresso → Próximo Módulo
-```
+## Limitações do estado atual
 
-## 🛠️ Funcionalidades Principais
+- O perfil é armazenado somente no navegador atual; não existe autenticação no servidor.
+- Não há backend ou banco de dados para guardar contas ou progresso.
+- O conteúdo que depende de YouTube, fontes, bibliotecas ou outros recursos externos precisa de conexão com a internet.
+- O arquivo `data/playlist.txt` está vazio no estado atual do repositório; não há uma lista de playlists cadastrada nele.
+- A plataforma é um projeto de estudo e não declara conformidade com padrões de acessibilidade nem disponibilidade de conteúdo em uma quantidade fixa de aulas.
 
-### 1. **Autenticação de Usuários**
+## Objetivo de aprendizagem
 
-```javascript
-// Login simples com localStorage
-localStorage.setItem(
-  "codeflow_user",
-  JSON.stringify({ nome, idade, joined: Date.now() }),
-);
-```
+O Code.Flow reúne experiências de front-end e organização de conteúdo educativo em um único projeto. Ele também serve como espaço de prática para manipulação do DOM, eventos, armazenamento local e geração de páginas.
 
-### 2. **Geração Dinâmica de Conteúdo**
-
-```javascript
-// Scripts automatizados geram páginas HTML com base em playlists do YouTube
-generateCoursePage(playlistId, courseId, courseTitle, outputFilename);
-```
-
-### 3. **Integração com YouTube**
-
-```javascript
-// Extração dinâmica de videoaulas
-fetch(`https://www.youtube.com/playlist?list=${playlistId}`)
-  .then((res) => res.text())
-  .then((html) => extractVideoIds(html));
-```
-
-### 4. **Efeitos Visuais com Canvas**
-
-- Fundo animado com partículas
-- Gradientes dinâmicos
-- Transições suaves
-
-### 5. **Rastreamento de Progresso**
-
-- Salva dados localmente
-- Recupera histórico de aprendizado
-- Exibe estatísticas personalizadas
-
-## 🎨 Design e UX
-
-- **Moderno**: Interface limpa e contemporânea
-- **Responsivo**: Funciona perfeitamente em desktop, tablet e mobile
-- **Acessível**: Seguindo padrões WCAG
-- **Intuitivo**: Navegação clara e lógica
-- **Engajante**: Gamificação e feedback positivo
-
-## 🤖 Como Este Projeto Usa IA
-
-Este projeto demonstra a aplicação prática de IA em várias dimensões:
-
-### 1. **Geração de Código**
-
-- HTML, CSS e JavaScript gerados inteligentemente
-- Otimização automática de performance
-- Refatoração baseada em boas práticas
-
-### 2. **Automação de Processos**
-
-- Scripts que geram páginas automaticamente
-- Integração com APIs externas
-- Processamento de dados em lote
-
-### 3. **Personalizações Inteligentes**
-
-- Interface adaptada ao usuário
-- Recomendações de próximos módulos
-- Análise de progresso em tempo real
-
-### 4. **Conteúdo Dinâmico**
-
-- Busca e integração de videoaulas
-- Organização automática de cursos
-- Atualização sem intervenção manual
-
-## 📊 Tecnologias Utilizadas
-
-| Categoria         | Tecnologia                      |
-| ----------------- | ------------------------------- |
-| Frontend          | HTML5, CSS3, Vanilla JavaScript |
-| Armazenamento     | localStorage, JSON              |
-| APIs              | YouTube API, Fetch API          |
-| Design            | Responsivo, Mobile-First        |
-| Ferramentas de IA | AntiGravity, Claude AI, GPT-4   |
-| Hosting           | GitHub Pages (opcional)         |
-
-## 🎯 Casos de Uso
-
-- ✅ Iniciantes aprendendo programação
-- ✅ Estudantes complementando cursos
-- ✅ Programadores aprofundando conhecimentos
-- ✅ Educadores buscando material de referência
-- ✅ Demonstração de IA aplicada
-
-## 📈 Estatísticas do Projeto
-
-- 🎓 5+ Linguagens de programação
-- 📺 100+ Videoaulas integradas
-- 💪 Exercícios interativos práticos
-- 🎮 Minigames educacionais
-- 🎯 100% gerado com IA
-
-## 🔜 Roadmap Futuro
-
-- [ ] Sistema de certificados digitais
-- [ ] Comunidade de aprendizes
-- [ ] Chat com IA para dúvidas
-- [ ] Análise preditiva de dificuldades
-- [ ] Personalização com ML
-- [ ] Sistema de badges e achievements
-- [ ] Integração com IDEs online
-- [ ] Modo offline
-- [ ] Multilíngue
-
-## 🐛 Problemas Conhecidos
-
-- Requer conexão com internet para videoaulas
-- Compatibilidade com navegadores muito antigos
-- localStorage limitado a ~5-10MB
-
-## 💡 Contribuições
-
-Sugestões e melhorias são bem-vindas! Se você tem ideias para expandir o projeto:
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
-5. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto é de código aberto , foi criado com fins educacionais e com o objetivo de automatizar meus estudos usando inteligência artificial.
-
-## 👨‍💻 Desenvolvedor da Plataforma : Arthur Duarte / Duartexz.dev
-
-**Desenvolvido 100% com Inteligência Artificial**
-
-Utilizando:
-
-- AntiGravity AI
-- Claude AI
-- GPT-4
-- Outras IAs integradas
-
-## 📞 Suporte
-
-Para dúvidas ou problemas:
-
-- Abra uma issue no GitHub
-- Consulte a documentação em `DESCRIPTION.md`
-- Verifique se seu navegador está atualizado
-
-## 🎓 Filosofia do Projeto
-
-> "O CodeFlow não é apenas uma plataforma de aprendizado. É uma demonstração de como a Inteligência Artificial pode revolucionar a educação, automatizar processos e colocar conhecimento complexo em prática de forma acessível e divertida."
+Consulte [ABOUT.md](./ABOUT.md) para uma nota resumida sobre a motivação do projeto.
 
 ---
 
-<div align="center">
-
-**CodeFlow © 2026**
-
-Desenvolvido 100% com IA | Automatizando o futuro da educação em programação
-
-[![Made with AI](https://img.shields.io/badge/Made%20with-AI-blue?style=flat-square)](https://github.com)
-
-</div>
+Desenvolvido por Arthur Duarte.
